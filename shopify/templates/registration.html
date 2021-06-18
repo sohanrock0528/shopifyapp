@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+        welcome to the cart store where can you buy awesome items!!.
+{% endblock %}
+{% block title %}
+     Sign up Here !
+{% endblock %}
+{% block content %}
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username"><br>
+    <input type="text" name="first_name" placeholder="firstname"><br>
+
+    <input type="text" name="last_name" placeholder="last_name"><br>
+
+    <input type="email" name="email" placeholder="email"><br>
+
+    <input type="password" name="password1" placeholder="password"><br>
+
+    <input type="password" name="password2" placeholder="confirm password"><br>
+
+    <input type="submit" value="Sign Up">
+
+</form>
+<div>
+    {% for message in messages %}
+    <h4>{{message}}</h4>
+    {% endfor %}
+</div>
+
+{% endblock %}
